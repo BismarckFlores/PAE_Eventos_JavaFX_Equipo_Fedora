@@ -30,6 +30,11 @@ public class PulperiaController {
     @FXML private TextField txtCantidad;
     @FXML private Label lblMensaje;
 
+    @FXML private TextField txtBuscar;
+    @FXML private Label lblResultado;
+    @FXML private ImageView imgNoEncontrado; // imagen que se muestra si no fue encontrado el objeto
+
+
     @FXML
     private void guardarProducto(ActionEvent event) {
 
