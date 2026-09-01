@@ -59,4 +59,13 @@ public class PulperiaController {
             return;
         }
 
+        // Guardar en memoria
+        inventario.put(codigo.trim(), new Producto(nombre.trim(), precio, cantidad));
+
+        lblMensaje.setText("Producto \"" + nombre.trim() + "\" guardado correctamente.");
+        txtCodigo.clear();
+        txtNombre.clear();
+        txtPrecio.clear();
+        txtCantidad.clear();
+
     }
