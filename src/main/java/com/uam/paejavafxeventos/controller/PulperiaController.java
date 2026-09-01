@@ -24,15 +24,23 @@ public class PulperiaController {
     private final Map<String, Producto> inventario = new HashMap<>();
 
     // ---- 4 cajas para el registro de un objeto: Codigo, Nombre, Precio, Cantidad ----
-    @FXML private TextField txtCodigo;
-    @FXML private TextField txtNombre;
-    @FXML private TextField txtPrecio;
-    @FXML private TextField txtCantidad;
-    @FXML private Label lblMensaje;
+    @FXML
+    private TextField txtCodigo;
+    @FXML
+    private TextField txtNombre;
+    @FXML
+    private TextField txtPrecio;
+    @FXML
+    private TextField txtCantidad;
+    @FXML
+    private Label lblMensaje;
 
-    @FXML private TextField txtBuscar;
-    @FXML private Label lblResultado;
-    @FXML private ImageView imgNoEncontrado; // imagen que se muestra si no fue encontrado el objeto
+    @FXML
+    private TextField txtBuscar;
+    @FXML
+    private Label lblResultado;
+    @FXML
+    private ImageView imgNoEncontrado; // imagen que se muestra si no fue encontrado el objeto
 
 
     @FXML
@@ -67,5 +75,12 @@ public class PulperiaController {
         txtNombre.clear();
         txtPrecio.clear();
         txtCantidad.clear();
-
     }
+
+    // Metodo que considera vacío tanto null como "" (o solo espacios)
+    private boolean esVacio(String texto) {
+        return texto == null || texto.trim().isEmpty();
+    }
+
+
+}
