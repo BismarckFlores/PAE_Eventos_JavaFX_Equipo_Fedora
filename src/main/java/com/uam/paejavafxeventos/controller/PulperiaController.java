@@ -43,5 +43,15 @@ public class PulperiaController {
             lblMensaje.setText("No es posible guardar el objeto, Asegurate de que todos los campos esten llenos");
             return;
         }
+        // Validar que precio y cantidad sean números
+        double precio;
+        int cantidad;
+        try {
+            precio = Double.parseDouble(precioTexto.trim());
+            cantidad = Integer.parseInt(cantidadTexto.trim());
+        } catch (NumberFormatException error) {
+            lblMensaje.setText("Precio y cantidad deben ser números válidos.");
+            return;
+        }
 
     }
