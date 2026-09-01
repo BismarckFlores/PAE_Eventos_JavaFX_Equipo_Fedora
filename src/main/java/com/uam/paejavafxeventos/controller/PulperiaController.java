@@ -82,5 +82,52 @@ public class PulperiaController {
         return texto == null || texto.trim().isEmpty();
     }
 
+    // BUSCAR -> se dispara con KeyEvent, comprobando manualmente
+    // que la tecla presionada sea ENTER (searchbar separado del registro)
+
+    @FXML
+    private void buscarProducto(KeyEvent event) {
+
+        if (event.getCode() != KeyCode.ENTER) {
+            return; // cualquier otra tecla no hace nada
+        }
+
+        String codigo = txtBuscar.getText();
+
+        if (esVacio(codigo)) {
+            lblResultado.setText("Escribe un código para buscar.");
+            imgNoEncontrado.setVisible(false);
+            return;
+        }
+
+        Producto producto = inventario.get(codigo.trim());
+
+        if (producto == null) {
+            // No existe en memoria -> mostrar imagen de error
+            lblResultado.setText("Producto no encontrado.");
+            imgNoEncontrado.setVisible(true);
+        } else {
+            // Sí existe -> mostrar datos y ocultar la imagen de error
+            imgNoEncontrado.setVisible(false);
+            lblResultado.setText(producto.nombre + " | Precio: " + producto.precio
+                    + " | Cantidad: " + producto.cantidad);
+        }
+    }
+
+
+    private static class Producto {
+        String nombre;
+        double precio;
+        int cantidad;
+
+        Producto(String nombre, double precio, int cantidad) {
+            this.nombre = nombre;
+            this.precio = precio;
+            this.cantidad = cantidad;
+        }
+    }
+}
+
+
 
 }
