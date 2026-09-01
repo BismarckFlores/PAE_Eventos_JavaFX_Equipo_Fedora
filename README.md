@@ -24,8 +24,8 @@ src/main/java/com/uam/paejavafxeventos/
 ├── controller/                controladores de cada reto
 ├── model/                     entidades (Producto, LoteCafe, Artesania)
 ├── dao/                       acceso a datos
-│   └── Dao.java               contrato genérico Dao<T, ID>
 ├── interfaces/                interfaces propias del proyecto
+│   └── Dao.java               contrato genérico Dao<T, ID>
 └── util/                      alertas, validaciones y navegación
 
 src/main/resources/com/uam/paejavafxeventos/

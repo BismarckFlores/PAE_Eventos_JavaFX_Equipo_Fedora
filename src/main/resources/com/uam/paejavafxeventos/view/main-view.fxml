@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="root-menu" xmlns:fx="http://javafx.com/fxml"
+<VBox styleClass="menu-root" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.uam.paejavafxeventos.MainController">
     <padding>
         <Insets top="40.0" right="34.0" bottom="26.0" left="34.0"/>
     </padding>
 
     <Label styleClass="eyebrow" text="PROGRAMACIÓN DE APLICACIONES DE ESCRITORIO"/>
-    <Label styleClass="titulo" text="Eventos y controles"/>
-    <Label styleClass="subtitulo" text="Elige el reto que quieres ejecutar.">
+    <Label styleClass="title" text="Eventos y controles"/>
+    <Label styleClass="subtitle" text="Elige el reto que quieres ejecutar.">
         <VBox.margin>
             <Insets top="4.0"/>
         </VBox.margin>
@@ -26,40 +26,40 @@
             <Insets top="26.0"/>
         </VBox.margin>
 
-        <Button styleClass="tarjeta" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
-                onAction="#abrirPulperia">
+        <Button styleClass="card" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
+                onAction="#openGroceryStore">
             <graphic>
                 <HBox spacing="16.0" alignment="CENTER_LEFT">
-                    <Label styleClass="tarjeta-numero" text="01"/>
+                    <Label styleClass="card-number" text="01"/>
                     <VBox spacing="3.0">
-                        <Label styleClass="tarjeta-titulo" text="Inventario de pulpería"/>
-                        <Label styleClass="tarjeta-detalle" text="ActionEvent · KeyEvent"/>
+                        <Label styleClass="card-title" text="Inventario de pulpería"/>
+                        <Label styleClass="card-detail" text="ActionEvent · KeyEvent"/>
                     </VBox>
                 </HBox>
             </graphic>
         </Button>
 
-        <Button styleClass="tarjeta" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
-                onAction="#abrirCafe">
+        <Button styleClass="card" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
+                onAction="#openCoffeeReception">
             <graphic>
                 <HBox spacing="16.0" alignment="CENTER_LEFT">
-                    <Label styleClass="tarjeta-numero" text="02"/>
+                    <Label styleClass="card-number" text="02"/>
                     <VBox spacing="3.0">
-                        <Label styleClass="tarjeta-titulo" text="Recepción de café"/>
-                        <Label styleClass="tarjeta-detalle" text="MouseEvent · ContextMenu"/>
+                        <Label styleClass="card-title" text="Recepción de café"/>
+                        <Label styleClass="card-detail" text="MouseEvent · ContextMenu"/>
                     </VBox>
                 </HBox>
             </graphic>
         </Button>
 
-        <Button styleClass="tarjeta" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
-                onAction="#abrirArtesanias">
+        <Button styleClass="card" maxWidth="Infinity" contentDisplay="GRAPHIC_ONLY"
+                onAction="#openCraftStore">
             <graphic>
                 <HBox spacing="16.0" alignment="CENTER_LEFT">
-                    <Label styleClass="tarjeta-numero" text="03"/>
+                    <Label styleClass="card-number" text="03"/>
                     <VBox spacing="3.0">
-                        <Label styleClass="tarjeta-titulo" text="Tienda de artesanías"/>
-                        <Label styleClass="tarjeta-detalle" text="MenuBar · ToolBar"/>
+                        <Label styleClass="card-title" text="Tienda de artesanías"/>
+                        <Label styleClass="card-detail" text="MenuBar · ToolBar"/>
                     </VBox>
                 </HBox>
             </graphic>
@@ -68,5 +68,5 @@
 
     <Region VBox.vgrow="ALWAYS"/>
 
-    <Label styleClass="pie" text="Equipo Fedora · Guía práctica de eventos"/>
+    <Label styleClass="footer" text="Equipo Fedora · Guía práctica de eventos"/>
 </VBox>
