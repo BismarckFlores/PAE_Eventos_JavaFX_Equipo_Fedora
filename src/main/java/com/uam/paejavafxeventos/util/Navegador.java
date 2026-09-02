@@ -19,7 +19,6 @@ public class Navegador {
 
     public static void cambiarEscenaConFade(ActionEvent event, String rutaFxml) {
         // El nodo que originó el evento (el botón presionado)
-
         Node origen = (Node) event.getSource();
         Scene escena = origen.getScene();
         Parent raizActual = escena.getRoot();
@@ -29,5 +28,13 @@ public class Navegador {
         fadeOut.setFromValue(1.0);
         fadeOut.setToValue(0.0);
 
+        fadeOut.setOnFinished(evento -> {
+            // Paso 2: cargar la pantalla nueva
+            Parent raizNueva = FXMLLoader.load(Navegador.class.getResource(rutaFxml));
+            raizNueva.setOpacity(0.0); // empieza invisible
+
+            escena.setRoot(raizNueva);
+
+        }
 
     }
