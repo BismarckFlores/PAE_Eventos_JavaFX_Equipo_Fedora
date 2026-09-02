@@ -1,40 +1,16 @@
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.uam.paejavafxeventos.controller.PulperiaController"
-            prefHeight="400.0" prefWidth="600.0">
-    <!--
-    hago el vbox y lo anclo a los 4 bordes del anchorpane
-    -->
-    <VBox spacing="8" AnchorPane.topAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.bottomAnchor="15.0">
-        <!-- ===== Registrar producto ===== -->
-        <Label text="Registrar producto (ENTER en cualquier campo para guardar)" style="-fx-font-weight: bold;"/>
-        <Label text="Código:"/>
-        <TextField fx:id="txtCodigo" onAction="#guardarProducto"/>
-        <Label text="Nombre:"/>
-        <TextField fx:id="txtNombre" onAction="#guardarProducto"/>
-        <Label text="Precio:"/>
-        <TextField fx:id="txtPrecio" onAction="#guardarProducto"/>
-        <Label text="Cantidad:"/>
-        <TextField fx:id="txtCantidad" onAction="#guardarProducto"/>
-        <Label fx:id="lblMensaje" text=""/>
-        <Separator/>
-        <!-- ===== Buscar producto ===== -->
-        <Label text="Buscar producto (ENTER aquí para buscar)" style="-fx-font-weight: bold;"/>
-        <TextField fx:id="txtBuscar" onKeyPressed="#buscarProducto"/>
-        <Label fx:id="lblResultado" text=""/>
-        <!--
-         Imagen de error, oculta hasta que una búsqueda no encuentre nada
-        -->
-        <ImageView fx:id="imgNoEncontrado" fitWidth="80" fitHeight="80" visible="false">
-            <image>
-                <Image url="@../images/pulperia-no-encontrado.png"/>
-            </image>
-        </ImageView>
-    </VBox>
-</AnchorPane>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" alignment="CENTER" spacing="20" prefHeight="400.0" prefWidth="600.0" styleClass="hub-root" stylesheets="@../css/app.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" >
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+    <Label text="Inventario de Pulpería" styleClass="hub-titulo"/>
+    <Label text="¿Qué deseas hacer?" styleClass="hub-subtitulo"/>
+    <Button text="📦 Registrar producto" onAction="#irARegistrar" styleClass="hub-boton" maxWidth="Infinity"/>
+    <Button text="🔍 Buscar producto" onAction="#irABuscar" styleClass="hub-boton" maxWidth="Infinity"/>
+</VBox>
