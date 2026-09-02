@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<AnchorPane fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" prefHeight="400.0" prefWidth="600.0">
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.uam.paejavafxeventos.controller.PulperiaController"
-            prefHeight="400.0" prefWidth="600.0">
+    <!--
+    hago el vbox y lo anclo a los 4 bordes del anchorpane
+    -->
 
-</AnchorPane>
+    <VBox spacing="8" AnchorPane.topAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.bottomAnchor="15.0">
+        <!-- ===== Registrar producto ===== -->
+        <Label text="Registrar producto (ENTER en cualquier campo para guardar)" style="-fx-font-weight: bold;"/>
+        <Label text="Código:"/>
+        <TextField fx:id="txtCodigo" onAction="#guardarProducto"/>
+        <Label text="Nombre:"/>
+        <TextField fx:id="txtNombre" onAction="#guardarProducto"/>
+        <Label text="Precio:"/>
+        <TextField fx:id="txtPrecio" onAction="#guardarProducto"/>
+        <Label text="Cantidad:"/>
+        <TextField fx:id="txtCantidad" onAction="#guardarProducto"/>
+        <Label fx:id="lblMensaje" text=""/>
+        <Separator/>
