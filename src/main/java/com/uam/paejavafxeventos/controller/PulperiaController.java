@@ -1,5 +1,5 @@
 package com.uam.paejavafxeventos.controller;
-
+import com.uam.paejavafxeventos.util.Navegador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -11,7 +11,8 @@ import javafx.scene.input.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PulperiaController {
+public class PulperiaController{
+
     // Reto 1 - Contexto: una pulpería necesita registrar productos y consultar rápidamente sus existencias.
     //    Capturar código, nombre, precio y cantidad.
     //    Usar ActionEvent para guardar.
@@ -21,7 +22,10 @@ public class PulperiaController {
     //Commit sugerido:
     //Implementa registro y búsqueda de productos
 
-    private final Map<String, Producto> inventario = new HashMap<>();
+    // "static" para que las 3 pantallas (hub, registrar, buscar) compartan
+    // el MISMO inventario, en vez de que cada una tenga el suyo vacío.
+
+    private static final Map<String, Producto> inventario = new HashMap<>();
 
     // ---- 4 cajas para el registro de un objeto: Codigo, Nombre, Precio, Cantidad ----
     @FXML
@@ -42,6 +46,21 @@ public class PulperiaController {
     @FXML
     private ImageView imgNoEncontrado; // imagen que se muestra si no fue encontrado el objeto
 
+
+    @FXML
+    private void irARegistrar(ActionEvent event) {
+        Navegador.cambiarEscenaConFade(event, "/com/uam/paejavafxeventos/view/pulperia-registrar.fxml");
+    }
+
+    @FXML
+    private void irABuscar(ActionEvent event) {
+        Navegador.cambiarEscenaConFade(event, "/com/uam/paejavafxeventos/view/pulperia-buscar.fxml");
+    }
+
+    @FXML
+    private void volverAlHub(ActionEvent event) {
+        Navegador.cambiarEscenaConFade(event, "/com/uam/paejavafxeventos/view/pulperia-view.fxml");
+    }
 
     @FXML
     private void guardarProducto(ActionEvent event) {
@@ -126,8 +145,4 @@ public class PulperiaController {
             this.cantidad = cantidad;
         }
     }
-}
-
-
-
 }
