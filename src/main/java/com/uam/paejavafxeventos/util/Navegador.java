@@ -18,5 +18,12 @@ public class Navegador {
     private static final Duration DURACION = Duration.millis(250);
 
     public static void cambiarEscenaConFade(ActionEvent event, String rutaFxml) {
+        // El nodo que originó el evento (el botón presionado)
+
+        Node origen = (Node) event.getSource();
+        Scene escena = origen.getScene();
+        Parent raizActual = escena.getRoot();
+
+
 
     }
