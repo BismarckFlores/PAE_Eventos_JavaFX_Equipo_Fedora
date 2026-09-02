@@ -29,18 +29,23 @@ public class Navegador {
         fadeOut.setToValue(0.0);
 
         fadeOut.setOnFinished(evento -> {
-            // Paso 2: cargar la pantalla nueva
-            Parent raizNueva = FXMLLoader.load(Navegador.class.getResource(rutaFxml));
-            raizNueva.setOpacity(0.0); // empieza invisible
+            try {
+                // Paso 2: cargar la pantalla nueva
+                Parent raizNueva = FXMLLoader.load(Navegador.class.getResource(rutaFxml));
+                raizNueva.setOpacity(0.0); // empieza invisible
 
-            escena.setRoot(raizNueva);
+                escena.setRoot(raizNueva);
 
-            // Paso 3: aparecer la pantalla nueva
-            FadeTransition fadeIn = new FadeTransition(DURACION, raizNueva);
-            fadeIn.setFromValue(0.0);
-            fadeIn.setToValue(1.0);
-            fadeIn.play();
-
-        }
-
+                // Paso 3: aparecer la pantalla nueva
+                FadeTransition fadeIn = new FadeTransition(DURACION, raizNueva);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.play();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        fadeOut.play();
     }
+}
+
