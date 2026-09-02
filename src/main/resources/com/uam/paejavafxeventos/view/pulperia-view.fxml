@@ -27,3 +27,13 @@
         <Label text="Buscar producto (ENTER aquí para buscar)" style="-fx-font-weight: bold;"/>
         <TextField fx:id="txtBuscar" onKeyPressed="#buscarProducto"/>
         <Label fx:id="lblResultado" text=""/>
+        <!--
+         Imagen de error, oculta hasta que una búsqueda no encuentre nada
+        -->
+        <ImageView fx:id="imgNoEncontrado" fitWidth="80" fitHeight="80" visible="false">
+            <image>
+                <Image url="@no-encontrado.png"/>
+            </image>
+        </ImageView>
+    </VBox>
+</AnchorPane>
