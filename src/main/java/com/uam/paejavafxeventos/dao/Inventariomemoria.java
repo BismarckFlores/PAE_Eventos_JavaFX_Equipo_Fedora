@@ -12,4 +12,20 @@ public class Inventariomemoria {
     private static final Inventariomemoria instancia = new Inventariomemoria();
 
     private final Map<String, Producto> productos = new HashMap<>();
+
+    //constructor privado: nadie mas puede hacer "new Inventariomemoria()"
+    private Inventariomemoria(){
+    }
+
+    // Punto de acceso unico: para que siempre develva la misma instancia
+    public static Inventariomemoria getInstancia(){
+        return instancia;
+    }
+
+    public void guardar(String codigo, Producto producto){
+        productos.put(codigo, producto);
+    }
+    public Producto buscar(String codigo){
+        return productos.get(codigo);
+    }
 }
