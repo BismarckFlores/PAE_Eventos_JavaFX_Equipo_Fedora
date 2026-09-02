@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" spacing="10" prefHeight="400.0" prefWidth="600.0" styleClass="pantalla-root" stylesheets="@../css/app.css">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" spacing="12" prefHeight="450.0" prefWidth="600.0" styleClass="pantalla-root" stylesheets="@../css/app.css">
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
+    <!-- Sección superior: Controles de búsqueda -->
     <Button text="← Volver" onAction="#volverAlHub" styleClass="boton-volver"/>
     <Label text="Buscar producto" styleClass="titulo-pantalla"/>
     <Label text="Escribe el código y presiona ENTER" styleClass="ayuda"/>
     <TextField fx:id="txtBuscar" onKeyPressed="#buscarProducto"/>
-    <Label fx:id="lblResultado" styleClass="mensaje"/>
-    <ImageView fx:id="imgNoEncontrado" fitWidth="150" fitHeight="150" visible="false">
-        <image>
-            <Image url="@../images/pulperia-no-encontrado.png"/>
-        </image>
-    </ImageView>
+    <!-- Sección inferior: Resultado e Imagen (Centrado y expandible) -->
+    <VBox alignment="CENTER" spacing="15" VBox.vgrow="ALWAYS">
+        <Label fx:id="lblResultado" styleClass="mensaje"/>
+        <ImageView fx:id="imgNoEncontrado"
+                   fitHeight="180.0"
+                   fitWidth="300.0"
+                   preserveRatio="true"
+                   visible="false">
+            <image>
+                <Image url="@../images/pulperia-no-encontrado.png"/>
+            </image>
+        </ImageView>
+    </VBox>
 </VBox>
