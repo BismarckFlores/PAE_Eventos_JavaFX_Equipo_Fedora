@@ -24,6 +24,10 @@ public class Navegador {
         Scene escena = origen.getScene();
         Parent raizActual = escena.getRoot();
 
+        // Paso 1: desvanecer lo que se ve ahora
+        FadeTransition fadeOut = new FadeTransition(DURACION, raizActual);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
 
 
     }
