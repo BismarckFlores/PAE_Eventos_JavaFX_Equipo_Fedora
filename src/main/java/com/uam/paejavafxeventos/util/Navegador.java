@@ -35,6 +35,12 @@ public class Navegador {
 
             escena.setRoot(raizNueva);
 
+            // Paso 3: aparecer la pantalla nueva
+            FadeTransition fadeIn = new FadeTransition(DURACION, raizNueva);
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.play();
+
         }
 
     }
