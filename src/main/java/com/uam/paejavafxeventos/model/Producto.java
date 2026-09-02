@@ -48,4 +48,8 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+    @Override
+    public String toString() {
+        return nombre + " - C$" + precio;
+    }
 }
