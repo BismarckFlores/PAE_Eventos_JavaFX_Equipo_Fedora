@@ -23,3 +23,7 @@
         <TextField fx:id="txtCantidad" onAction="#guardarProducto"/>
         <Label fx:id="lblMensaje" text=""/>
         <Separator/>
+        <!-- ===== Buscar producto ===== -->
+        <Label text="Buscar producto (ENTER aquí para buscar)" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtBuscar" onKeyPressed="#buscarProducto"/>
+        <Label fx:id="lblResultado" text=""/>
