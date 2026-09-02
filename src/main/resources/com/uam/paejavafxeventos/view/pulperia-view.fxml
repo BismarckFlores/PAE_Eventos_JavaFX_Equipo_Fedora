@@ -4,12 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
-<AnchorPane fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.uam.paejavafxeventos.controller.PulperiaController"
+            prefHeight="400.0" prefWidth="600.0">
     <!--
     hago el vbox y lo anclo a los 4 bordes del anchorpane
     -->
-
     <VBox spacing="8" AnchorPane.topAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.bottomAnchor="15.0">
         <!-- ===== Registrar producto ===== -->
         <Label text="Registrar producto (ENTER en cualquier campo para guardar)" style="-fx-font-weight: bold;"/>
