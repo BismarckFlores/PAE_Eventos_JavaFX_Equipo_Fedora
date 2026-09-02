@@ -6,9 +6,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.uam.paejavafxeventos.controller.PulperiaController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.uam.paejavafxeventos.controller.PulperiaController" spacing="10" prefHeight="400.0" prefWidth="600.0" styleClass="pantalla-root" stylesheets="@../css/app.css">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+    <Button text="← Volver" onAction="#volverAlHub" styleClass="boton-volver"/>
+    <Label text="Buscar producto" styleClass="titulo-pantalla"/>
+    <Label text="Escribe el código y presiona ENTER" styleClass="ayuda"/>
+    <TextField fx:id="txtBuscar" onKeyPressed="#buscarProducto"/>
+    <Label fx:id="lblResultado" styleClass="mensaje"/>
+    <ImageView fx:id="imgNoEncontrado" fitWidth="150" fitHeight="150" visible="false">
+        <image>
+            <Image url="@../images/pulperia-no-encontrado.png"/>
+        </image>
+    </ImageView>
+</VBox>
